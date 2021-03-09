@@ -1,6 +1,6 @@
 {
   "name": "egg-simple",
-  "version": "1.0.0",
+  "version": "1.22.5",
   "description": "egg server",
   "private": true,
   "egg": {
