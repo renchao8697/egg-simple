@@ -36,9 +36,9 @@ class UserService extends Service {
     const token = await this.apply(user._id)
 
     return {
-      ...payload,
-      token,
-      success: true
+      username: user.username,
+      id: user._id,
+      token
     }
   }
 

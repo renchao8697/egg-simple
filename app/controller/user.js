@@ -8,15 +8,16 @@ class UserController extends Controller {
     const payload = ctx.request.body ?? {}
     
     const res = await service.user.login(payload)
-
-    ctx.body = res
+    console.log(ctx.helper.success)
+    ctx.helper.success({ctx, res})
   }
 
   async create() {
     const { ctx, service } = this
     const payload = ctx.request.body ?? {}
     const res = await service.user.create(payload)
-    ctx.body = res
+    
+    ctx.helper.success({ctx, res})
   }
 }
 
