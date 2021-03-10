@@ -8,14 +8,14 @@ module.exports = {
   // }
   jwt: {
     enable: true,
-    package: 'egg-jwt'
+    package: 'egg-jwt',
   },
   mongoose: {
     enable: true,
-    package: 'egg-mongoose'
+    package: 'egg-mongoose',
   },
   bcrypt: {
     enable: true,
-    package: 'egg-bcrypt'
-  }
+    package: 'egg-bcrypt',
+  },
 };

@@ -1,26 +1,26 @@
-'use strict'
+'use strict';
 
 module.exports = (options, app) => {
   return async function(ctx, next) {
-    const {noAuthRouter, jwt} = app.config
-    const {url} = ctx
-    const flag = noAuthRouter.includes(url)
+    const { noAuthRouter, jwt } = app.config;
+    const { url } = ctx;
+    const flag = noAuthRouter.includes(url);
     if (flag) {
-      await next()
+      await next();
     } else {
       let token = ctx.get('Authorization');
-      token = token.substring(7)
+      token = token.substring(7);
       try {
-        ctx.state.user = await app.jwt.verify(token, jwt.secret)
-        
-        await next()
+        ctx.state.user = await app.jwt.verify(token, jwt.secret);
+
+        await next();
       } catch (err) {
-        ctx.status = 401
+        ctx.status = 401;
         ctx.body = {
           code: 401,
-          message: 'invalid token'
-        }
+          message: 'invalid token',
+        };
       }
     }
-  }
-}
+  };
+};
