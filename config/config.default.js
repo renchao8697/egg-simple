@@ -15,12 +15,12 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_18645008305';
 
-  config.noAuthRouter = ['/api/login']
+  config.noAuthRouter = [ '/api/login' ];
 
   // add your middleware config here
   config.middleware = [
     'auth',
-    'errorHandler'
+    'errorHandler',
   ];
 
   // add your user config here
@@ -31,26 +31,26 @@ module.exports = appInfo => {
   config.security = {
     csrf: {
       enable: true,
-      ignoreJSON: true
+      ignoreJSON: true,
     },
     // 添加白名单
-    domainWhiteList: ['http://localhost:8000']
-  }
+    domainWhiteList: [ 'http://localhost:8000' ],
+  };
 
   config.jwt = {
     secret: '_renchao',
     // enable: true,
     // ignore: '/api/login'
-  }
+  };
 
   config.mongoose = {
     url: 'mongodb://localhost:27017/egg_simple',
     options: {
       autoReconnect: true,
       reconnectTries: Number.MAX_VALUE,
-      bufferMaxEntries: 0
-    }
-  }
+      bufferMaxEntries: 0,
+    },
+  };
 
   return {
     ...config,

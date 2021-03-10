@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-exports.success = ({ctx, res = null, message = 'success'}) => {
+exports.success = ({ ctx, res = null, message = 'success' }) => {
   ctx.body = {
     code: 0,
     data: res,
-    message
-  }
-  ctx.status = 200
-}
+    message,
+  };
+  ctx.status = 200;
+};
