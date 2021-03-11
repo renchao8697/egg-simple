@@ -8,7 +8,6 @@ class UserController extends Controller {
     const payload = ctx.request.body ?? {};
 
     const res = await service.user.login(payload);
-    console.log(ctx.helper.success);
     ctx.helper.success({ ctx, res });
   }
 

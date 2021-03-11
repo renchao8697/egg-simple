@@ -43,6 +43,11 @@ module.exports = appInfo => {
     // ignore: '/api/login'
   };
 
+  config.validate = {
+    // convert: false,
+    // validateRoot: false,
+  };
+
   config.mongoose = {
     url: 'mongodb://localhost:27017/egg_simple',
     options: {
