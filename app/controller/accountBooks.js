@@ -3,10 +3,10 @@
 const Controller = require('egg').Controller;
 
 const createRule = {
-  amount: { type: 'int', require: true },
-  date: { type: 'date', require: true },
-  status: { type: 'enum', values: [ '1', '2', '3', '4', '5' ], require: true },
-  desc: { type: 'string?' },
+  amount: 'int', 
+  date: 'date',
+  status: [ '1', '2', '3', '4', '5' ],
+  desc: 'string?',
 };
 
 class AccountBookController extends Controller {
