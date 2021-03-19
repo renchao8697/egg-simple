@@ -10,5 +10,5 @@ module.exports = app => {
   router.post('/api/createuser', controller.user.create);
   router.post('/api/login', controller.user.login);
 
-  router.resources('accountBooks', '/api/accountBooks', app.controller.accountBooks);
+  router.resources('accounts', '/api/accounts', app.controller.accounts);
 };

@@ -3,7 +3,7 @@
 const Controller = require('egg').Controller;
 
 const createRule = {
-  amount: 'int', 
+  amount: 'int',
   date: 'date',
   status: [ '1', '2', '3', '4', '5' ],
   desc: 'string?',
@@ -13,7 +13,7 @@ class AccountBookController extends Controller {
   async index() {
     const { ctx, service } = this;
     const payload = ctx.request.query;
-    const res = await service.accountBooks.index(payload);
+    const res = await service.accounts.index(payload);
 
     ctx.helper.success({ ctx, res });
   }
@@ -21,7 +21,7 @@ class AccountBookController extends Controller {
     const { ctx, service } = this;
     const payload = ctx.request.body;
     ctx.validate(createRule, payload);
-    const res = await service.accountBooks.create(payload);
+    const res = await service.accounts.create(payload);
 
     ctx.helper.success({ ctx, res });
   }
@@ -29,14 +29,14 @@ class AccountBookController extends Controller {
     const { ctx, service } = this;
     const id = ctx.params.id;
     const payload = ctx.request.body;
-    const res = await service.accountBooks.update(id, payload);
+    const res = await service.accounts.update(id, payload);
 
     ctx.helper.success({ ctx, res });
   }
   async destroy() {
     const { ctx, service } = this;
     const id = ctx.params.id;
-    const res = await service.accountBooks.destroy(id);
+    const res = await service.accounts.destroy(id);
 
     ctx.helper.success({ ctx, res });
   }

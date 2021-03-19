@@ -9,28 +9,24 @@ exports.success = ({ ctx, res = null, message = 'success' }) => {
   ctx.status = 200;
 };
 
-const checkType = (obj) => {
-  return Object.prototype.toString.call(obj).slice(8, -1)
-}
+const checkType = obj => {
+  return Object.prototype.toString.call(obj).slice(8, -1);
+};
 
-exports.checkType = checkType
-
-
-const deleteKeys = (obj) => {
-  let res = {}
+const deleteKeys = obj => {
+  const res = {};
   Object.keys(obj).forEach(key => {
     if (checkType(obj[key]) === 'Object') {
-      obj[key] = deleteKeys(obj[key])
+      obj[key] = deleteKeys(obj[key]);
       if (!Object.keys(obj[key]).length) {
-        obj[key] = undefined
+        obj[key] = undefined;
       }
     }
     if (obj[key] !== undefined) {
-      res[key] = obj[key]
+      res[key] = obj[key];
     }
-  })
-  return res
-}
+  });
+  return res;
+};
 
-exports.deleteKeys = deleteKeys
-
+exports.deleteKeys = deleteKeys;

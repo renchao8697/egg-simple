@@ -34,7 +34,8 @@ module.exports = appInfo => {
       ignoreJSON: true,
     },
     // 添加白名单
-    domainWhiteList: [ 'http://localhost:8000' ],
+    // domainWhiteList: [ 'http://localhost:8000' ],
+    domainWhiteList: [ 'http://172.17.134.154:8000' ],
   };
 
   config.jwt = {
