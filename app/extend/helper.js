@@ -8,6 +8,14 @@ exports.success = ({ ctx, res = null, message = 'success' }) => {
   };
   ctx.status = 200;
 };
+exports.error = ({ ctx, error = null, status = 401, message = 'error' }) => {
+  ctx.body = {
+    code: 401,
+    message,
+    ...error,
+  };
+  ctx.status = status;
+};
 
 const checkType = obj => {
   return Object.prototype.toString.call(obj).slice(8, -1);

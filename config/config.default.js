@@ -15,7 +15,7 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_18645008305';
 
-  config.noAuthRouter = [ '/api/login' ];
+  config.noAuthRouter = [ '/api/login', '/api/register' ];
 
   // add your middleware config here
   config.middleware = [
@@ -34,8 +34,7 @@ module.exports = appInfo => {
       ignoreJSON: true,
     },
     // 添加白名单
-    // domainWhiteList: [ 'http://localhost:8000' ],
-    domainWhiteList: [ 'http://172.17.134.154:8000' ],
+    domainWhiteList: [ 'http://localhost:8000' ],
   };
 
   config.jwt = {
