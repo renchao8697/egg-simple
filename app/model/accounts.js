@@ -12,5 +12,5 @@ module.exports = app => {
     desc: { type: String },
   });
 
-  return mongoose.model('AccountBook', AccountSchema);
+  return mongoose.model('Account', AccountSchema);
 };

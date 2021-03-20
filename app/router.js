@@ -11,4 +11,5 @@ module.exports = app => {
   router.post('/api/login', controller.user.login);
 
   router.resources('accounts', '/api/accounts', app.controller.accounts);
+  router.resources('calendars', '/api/calendars', app.controller.calendars);
 };

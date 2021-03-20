@@ -18,7 +18,7 @@ module.exports = (option, app) => {
       if (status === 422) {
         ctx.body.detail = err.errors;
       }
-      ctx.status = 200;
+      ctx.status = status;
     }
   };
 };

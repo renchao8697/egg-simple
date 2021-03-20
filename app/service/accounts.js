@@ -67,7 +67,6 @@ class AccountService extends Service {
       ...payload,
       userId,
     };
-    // console.log(data)
     const res = await ctx.model.Accounts.create(data);
     return res;
   }
