@@ -15,7 +15,7 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_18645008305';
 
-  config.noAuthRouter = [ '/api/login' ];
+  config.noAuthRouter = [ '/api/login', '/api/register' ];
 
   // add your middleware config here
   config.middleware = [

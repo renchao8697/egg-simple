@@ -8,7 +8,12 @@ class UserController extends Controller {
     const payload = ctx.request.body ?? {};
 
     const res = await service.user.login(payload);
-    ctx.helper.success({ ctx, res });
+
+    if (res.success === false) {
+      ctx.helper.error({ ctx, error: res });
+    } else {
+      ctx.helper.success({ ctx, res });
+    }
   }
 
   async create() {

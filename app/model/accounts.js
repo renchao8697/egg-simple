@@ -3,7 +3,7 @@
 module.exports = app => {
   const mongoose = app.mongoose;
   const { Schema } = mongoose;
-  const AccountBookSchema = new Schema({
+  const AccountSchema = new Schema({
     userId: { type: Schema.Types.ObjectId, require: true },
     createdAt: { type: Date, default: Date.now },
     amount: { type: Number, require: true },
@@ -12,5 +12,5 @@ module.exports = app => {
     desc: { type: String },
   });
 
-  return mongoose.model('AccountBook', AccountBookSchema);
+  return mongoose.model('AccountBook', AccountSchema);
 };
