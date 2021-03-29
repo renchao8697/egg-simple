@@ -9,7 +9,7 @@ class AccountService extends Service {
     let {
       current,
       pageSize,
-      sorter,
+      sorter = '{}',
       status,
       desc,
       startDate,
